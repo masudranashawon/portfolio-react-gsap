@@ -61,7 +61,7 @@ body {
 
 h2 {
   font-family: var(--font-sans-serif);
-  font-size: 6.3vw;
+  font-size: 6.2vw;
   font-weight: 400;
 }
 
@@ -94,13 +94,13 @@ hr {
 }
 
 .header .row:nth-child(3) {
-  margin-bottom: 4.5vw; /* experimental */
+  margin-bottom: 3vw;
 }
 
 .header .row:nth-child(3) span,
 .header .row a {
   font-family: var(--font-sans-serif);
-  font-size: 1.6rem; /* drafted */
+  font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--color-dark);
@@ -119,8 +119,9 @@ hr {
 }
 
 .header .box span:nth-child(2) {
-  font-size: 3.5rem; /* drafted */
+  font-size: 3.5rem;
 }
+
 .header .box.about {
   background: linear-gradient(135deg, var(--color-light) 90%, transparent 10%);
 }
