@@ -1,0 +1,136 @@
+/*======================
+  Import Google fonts
+====================== */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*======================
+  Global Styles
+====================== */
+:root {
+  --color-light: #fbefdf;
+  --color-gray: #c1c0b6;
+  --color-gray-darker: #b2b2a8;
+  --color-dark: #3f3b37;
+  --color-orange: #db4c44;
+  --color-yellow: #e7aa2c;
+  --color-cyan: #32b8cb;
+
+  --font-sans-serif: "Cabin", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-gray-darker);
+  color: var(--color-dark);
+}
+
+.wrapper {
+  background-color: var(--color-gray);
+  min-height: 100vh;
+  margin: 1%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: var(--font-sans-serif);
+  font-size: 6.3vw;
+  font-weight: 400;
+}
+
+hr {
+  width: 100%;
+  background-color: var(--color-dark);
+  height: 1px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header .row span {
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.header .row:nth-child(1) h2 {
+  font-family: var(--font-serif);
+}
+
+.header .row:nth-child(3) {
+  margin-bottom: 4.5vw; /* experimental */
+}
+
+.header .row:nth-child(3) span,
+.header .row a {
+  font-family: var(--font-sans-serif);
+  font-size: 1.6rem; /* drafted */
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.header .row:nth-child(7) {
+  justify-content: center;
+}
+
+.header .row .box {
+  width: 14vw;
+  height: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header .box span:nth-child(2) {
+  font-size: 3.5rem; /* drafted */
+}
+.header .box.about {
+  background: linear-gradient(135deg, var(--color-light) 90%, transparent 10%);
+}
+
+.header .box.projects {
+  background: linear-gradient(135deg, var(--color-orange) 90%, transparent 10%);
+  color: var(--color-light);
+}
+
+.header .box.skills {
+  background: linear-gradient(135deg, var(--color-yellow) 90%, transparent 10%);
+  color: var(--color-light);
+}
