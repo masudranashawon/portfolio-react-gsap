@@ -183,6 +183,7 @@ hr {
   justify-content: space-between;
   align-items: flex-end;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .project-item span {
@@ -190,7 +191,6 @@ hr {
   font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--color-dark);
 }
 
 .project-titles {
@@ -205,4 +205,69 @@ hr {
   text-align: right;
   overflow: hidden;
   gap: 1rem;
+}
+
+.project-item:hover .project-details,
+.project-item:hover .single-title {
+  display: none;
+}
+
+.project-item .multiple-title {
+  display: none;
+}
+
+.project-item:hover .multiple-title {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-light);
+  font-style: italic;
+}
+
+.not-found-section {
+  display: flex;
+  gap: 2rem;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-sans-serif);
+}
+
+.error {
+  color: var(--color-orange);
+  font-size: 6vw;
+  font-weight: bold;
+}
+
+.not-found {
+  font-size: 4vw;
+  letter-spacing: 0.4rem;
+}
+
+.not-found span,
+.error span {
+  display: inline-block;
+}
+
+.go-home-link {
+  font-size: 1.8vw;
+  background-color: var(--color-cyan);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  color: var(--color-light);
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.go-home-link:hover {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.word-space {
+  margin-right: 2rem;
 }

@@ -1,3 +1,11 @@
+import { useRef, useState } from "react";
+import {
+  useProjectTitlesSpan,
+  useProjectsLines,
+  useProjectsTexts,
+  useProjectsNumbers,
+} from "../hooks/gsap";
+
 const data = [
   {
     id: 1,
@@ -29,27 +37,76 @@ const data = [
   },
 ];
 
+const colors = ["#db4c44", "#32b8cb", "#00AD6F", "#8069ED"];
+
 const Projects = () => {
+  const [currentProject, setCurrentProject] = useState(null);
+
+  const projectsRef = useRef(null);
+  const title1 = useRef(null);
+  const title2 = useRef(null);
+  const lineRef = useRef([]);
+  const textRef = useRef([]);
+  const numberRef = useRef([]);
+  const dateRef = useRef([]);
+  const toolsRef = useRef([]);
+
+  const titilesArr = [title1, title2];
+
+  useProjectTitlesSpan(titilesArr, projectsRef);
+  useProjectsLines(lineRef.current, projectsRef);
+  useProjectsTexts(textRef.current, projectsRef);
+  useProjectsTexts(dateRef.current, projectsRef, 1);
+  useProjectsTexts(toolsRef.current, projectsRef, 1.5);
+  useProjectsNumbers(numberRef.current, projectsRef);
+
+  const projectsWrapperStyles = {
+    backgroundColor: colors[currentProject],
+  };
+
+  const handleProjectColor = (index) => {
+    setCurrentProject(index);
+  };
+
   return (
-    <div className='projects-section'>
+    <div className='projects-section' ref={projectsRef}>
       <div className='titles'>
-        <span>Selected works (2022-2023)</span>
-        <span>Projects</span>
+        <span ref={title1}>Selected works (2022 - 2023)</span>
+        <span ref={title2}>Projects</span>
       </div>
-      <div className='projects-list-wrapper'>
-        {data.map((project) => (
-          <div div className='project-wrapper'>
-            <div className='project-item'>
+
+      <div className='projects-list-wrapper' style={projectsWrapperStyles}>
+        {data.map((project, i) => (
+          <div className='project-wrapper' key={project.id}>
+            <div
+              className='project-item'
+              onMouseOver={() => handleProjectColor(i)}
+            >
               <div className='project-titles'>
-                <span>{project.number}</span>
-                <h2>{project.title}</h2>
+                <span ref={(el) => (numberRef.current[i] = el)}>
+                  {project.number}
+                </span>
+                <h2
+                  className='single-title'
+                  ref={(el) => (textRef.current[i] = el)}
+                >
+                  {project.title}
+                </h2>
+                <h2 className='multiple-title'>
+                  {project.title} - {project.title} - {project.title}
+                </h2>
               </div>
               <div className='project-details'>
-                <span>{project.date}</span>
-                <span>{project.tools}</span>
+                <span ref={(el) => (dateRef.current[i] = el)}>
+                  {project.date}
+                </span>
+                <span ref={(el) => (toolsRef.current[i] = el)}>
+                  {project.tools}
+                </span>
               </div>
             </div>
-            <hr />
+
+            <hr ref={(el) => (lineRef.current[i] = el)} />
           </div>
         ))}
       </div>
