@@ -71,6 +71,9 @@ hr {
   height: 1px;
 }
 
+/*======================
+  Header Styles
+====================== */
 .header {
   display: flex;
   flex-direction: column;
@@ -106,7 +109,7 @@ hr {
   color: var(--color-dark);
 }
 
-.header .row:nth-child(7) {
+.header .row:nth-child(6) {
   justify-content: center;
 }
 
@@ -132,6 +135,74 @@ hr {
 }
 
 .header .box.skills {
-  background: linear-gradient(135deg, var(--color-yellow) 90%, transparent 10%);
+  background: linear-gradient(135deg, var(--color-cyan) 90%, transparent 10%);
   color: var(--color-light);
+}
+
+/*======================
+  Projects Styles
+====================== */
+.projects-section {
+  margin-top: 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projects-section .titles {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
+  overflow: hidden;
+}
+
+.projects-section .titles span {
+  font-family: var(--font-sans-serif);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.projects-list-wrapper {
+  background-color: var(--color-yellow);
+  padding: 3vw 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.project-item span {
+  font-family: var(--font-sans-serif);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.project-titles {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  overflow: hidden;
+  gap: 1rem;
 }
