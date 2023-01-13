@@ -1,7 +1,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import { BsTranslate } from "react-icons/bs";
 
 gsap.registerPlugin(ScrollTrigger);
 
